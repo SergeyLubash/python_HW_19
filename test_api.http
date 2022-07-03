@@ -1,0 +1,137 @@
+GET http://127.0.0.1:5000/movies/
+Accept: application/json
+
+
+###
+
+GET http://127.0.0.1:5000/movies/?director_id=12
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:5000/movies/?genre_id=4
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:5000/movies/?year=2010
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:5000/directors/
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:5000/directors/1
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:5000/genres/
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:5000/genres/1
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:5000/movies/
+Accept: application/json
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNjU2ODQwNjQ5fQ.CJHBcg8zHfEu2286zIDJ9zCX6yRk_fmTd2DV3QkOv5M
+
+###
+
+POST http://127.0.0.1:5000/movies/
+Accept: application/json
+Content-Type: application/json
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNjU2ODQwNjQ5fQ.CJHBcg8zHfEu2286zIDJ9zCX6yRk_fmTd2DV3QkOv5M
+
+{
+  "title": "Гарри Поттер мой кумир!",
+  "trailer": "таким фильмам не нужны трейлеры",
+  "year": 1990,
+  "rating": 10,
+  "description": "10 из 10!"
+}
+
+###
+
+PUT http://127.0.0.1:5000/movies/26
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 21,
+  "title": "-------",
+  "trailer": "-----",
+  "year": 2000,
+  "rating": 0,
+  "description": "0 из 10!",
+  "genre_id": 1,
+  "director_id": 1
+}
+
+###
+
+PATCH http://127.0.0.1:5000/movies/26
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 21,
+  "title": "-------",
+  "trailer": "-----",
+  "year": 2020,
+  "rating": 0,
+  "description": "0 из 10!",
+  "genre_id": 1,
+  "director_id": 1
+}
+
+###
+
+DELETE http://127.0.0.1:5000/movies/22
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJyb2xlIjoidGVzdCIsImV4cCI6MTY1OTQyNzIyNn0.Ftlfp8rBKyXfewWpUnNwjxNU3GYb5vq6AX7ZpAm0DKs
+
+
+###
+
+POST http://127.0.0.1:5000/users/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "123456frde566",
+  "role": "admin"
+}
+
+###
+
+GET http://127.0.0.1:5000/users/
+Accept: application/json
+
+###
+
+PUT http://127.0.0.1:5000/auth/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "refresh_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJyb2xlIjoidGVzdCIsImV4cCI6MTY1OTQyNzIyNn0.Ftlfp8rBKyXfewWpUnNwjxNU3GYb5vq6AX7ZpAm0DKs"
+}
+
+###
+
+POST http://127.0.0.1:5000/auth/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "123456frde566"
+}
